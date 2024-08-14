@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    {% block head %}
+    <link rel="stylesheet" href="cssjs/css/style.css" />
+    <title>{% block title %}{% endblock %} - My Webpage</title>
+    {% endblock %}
+</head>
+
+<body>
+    <div id="content">{% block content %}{% endblock %}</div>
+    <div id="footer">
+        {% block footer %}
+        &copy; Copyright 2011 by <a href="https://example.com/">you</a>.
+        {% endblock %}
+    </div>
+    <script src="cssjs/js/app.js"></script>
+</body>
+</html>

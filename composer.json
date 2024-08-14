@@ -1,0 +1,9 @@
+{
+    "name": "dev/twig-project-base",
+    "autoload": {
+        "psr-4": {
+            "App\\": "app/"
+        }
+    },
+    "require": {}
+}

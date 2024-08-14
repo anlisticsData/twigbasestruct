@@ -1,0 +1,54 @@
+sudo mkdir -p /var/www/cpanel_analitics.com/public_html
+sudo mkdir -p /var/www/cpanel_analitics.com/logs
+
+sudo chown -R $USER:$USER /var/www/cpanel_analitics.com/public_html
+sudo chmod -R 755 /var/www/cpanel_analitics.com
+
+
+nano /var/www/cpanel_analitics.com/public_html/index.html
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Bem-vindo ao cpanel_analitics.com!</title>
+</head>
+<body>
+    <h1>Sucesso! O Virtual Host cpanel_analitics.com está funcionando!</h1>
+</body>
+</html>
+
+
+sudo nano /etc/apache2/sites-available/cpanel_analitics.com.conf
+<VirtualHost *:80>
+    ServerAdmin webmaster@cpanel_analitics.com
+    ServerName cpanel_analitics.com
+    ServerAlias www.cpanel_analitics.com
+    DocumentRoot /var/www/cpanel_analitics.com/public_html
+    ErrorLog /var/www/cpanel_analitics.com/logs/error.log
+    CustomLog /var/www/cpanel_analitics.com/logs/access.log combined
+</VirtualHost>
+
+
+sudo a2ensite cpanel_analitics.com.conf
+sudo a2dissite 000-default.conf
+sudo systemctl restart apache2
+sudo nano /etc/hosts
+127.0.0.1 cpanel_analitics.com
+
+
+
+
+
+
+
+echo "# twigbasestruct" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M main
+git remote add origin git@github.com:anlisticsData/twigbasestruct.git
+git push -u origin main
+
+
+git remote add origin git@github.com:anlisticsData/twigbasestruct.git
+git branch -M main
+git push -u origin main
