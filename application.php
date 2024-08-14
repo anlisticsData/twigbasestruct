@@ -8,3 +8,4 @@ $loader = new \Twig\Loader\FilesystemLoader('resources/');
 $twig = new \Twig\Environment($loader, [
     'cache' =>false,
 ]);
+$twig->addGlobal('session', $_SESSION);
